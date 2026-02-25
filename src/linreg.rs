@@ -43,4 +43,12 @@ impl LinearRegression {
         }
         self.weights = Some(w);
     }
+
+    pub fn predict(&mut self, X: Array2<f64>) -> Array1<f64> {
+        let w = self.weights.as_ref().expect(
+            "Model has not been trained. Call .fit(X,y) first."
+        );
+        
+        X.dot(w)
+    }
 }
