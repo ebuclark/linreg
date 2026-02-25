@@ -7,6 +7,7 @@ pub struct LinearRegression {
 }
 
 impl LinearRegression {
+    // Core methods
     pub fn new(lr: f64, n_iters: i32) -> Self {
         Self {
             lr,
@@ -49,6 +50,10 @@ impl LinearRegression {
         X.dot(w)
     }
 
+}
+
+impl LinearRegression {
+    // Evaluation methods
     pub fn mse(&mut self, X: &Array2<f64>, y: &Array1<f64>) -> f64 {
         let y_hat = self.predict(X);
         let residuals = y - &y_hat;
