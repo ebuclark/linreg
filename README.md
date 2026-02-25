@@ -3,10 +3,8 @@
 Simple linear regression implementation in Rust.
 
 ## Features
-- Gradient descent
-- Custom learning rate and iterations
-- Multiple features and bias
-- Mean squared error calculation
+- Data simulation
+- Gradient descent over MSE loss function
 
 ## Usage
 Run the simulation:
