@@ -44,6 +44,11 @@ class LinearRegression:
         """
         y_pred = np.dot(X, self.weights)
         return y_pred
+    
+    def mse(self, X, y):
+        y_hat = self.predict(X)
+        y = y.reshape(-1,1)
+        return np.mean((y_hat-y)**2)
 
 # Example Usage:
 if __name__ == '__main__':
@@ -63,3 +68,4 @@ if __name__ == '__main__':
     # Print the learned parameters
     print(f"Learned weights: {regressor.weights}")
     # Expected values are close to weights: [4.0,3.0,5.0]
+    print(f"MSE: {regressor.mse(X,y):.3f}")
